@@ -19,14 +19,13 @@ def func(n):
         return n
     else:
         return func(n-1) + func(n-2)
-    
+   
 def fib(n):
     if n in cache:
         return cache[n]
     else:
-        num = fib(n-1) + fib(n-2)
-        cache[n] = num
-    return cache[n]
+        cache[n] = fib(n-1) + fib(n-2)
+        return cache[n]
 
 """
 Question 5:
@@ -36,7 +35,6 @@ Each value is only calculated once since the cache keeps a record of the values 
 
 import timeit
 from matplotlib import pyplot as plt
-import numpy as np
 
 func_avg = []
 fib_avg = []
@@ -47,11 +45,10 @@ for i in range(36):
     func_avg.append(func_tm / 10)
     fib_avg.append(fib_tm / 10)
 
-#slope, intercept = np.polyfit(range(36), avgtimes, 1)
+plt.figure(figsize=(9, 7))
 plt.scatter(range(36), func_avg)
-plt.show()
-#linevalues = [slope * x + intercept for x in listlengths]
-#plt.plot(listlengths, linevalues, 'r')
+plt.savefig("1.6.1.jpg")
 
+plt.figure(figsize=(9, 7))
 plt.scatter(range(36), fib_avg)
-plt.show()
+plt.savefig("1.6.2.jpg")
