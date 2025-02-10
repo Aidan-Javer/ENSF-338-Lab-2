@@ -1,3 +1,5 @@
+import timeit
+
 def linear_search(array, key):
     for i in array:
         if (array[i] == key):
@@ -16,3 +18,7 @@ def binary_search(array, key):
         else:
             hi = mid - 1
     return -1
+
+def measure_time(search_func, array, key, iterations=100):
+    t = timeit.timeit(lambda: search_func(array, key), number=iterations)
+    return t / iterations
