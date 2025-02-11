@@ -1,6 +1,5 @@
 import timeit
 import cProfile
-import re
 
 def sub_function(n):
     # sub function that calculates the factorial of n
@@ -51,11 +50,14 @@ Benchmarking is more concerned with the overall performance of the program, whil
 """
 # QUESTION 3
 """
-The execution time was 7.393 seconds.
+The solution has been implemented in the code above.
 """
 # QUESTION 4
 """
-A good chunk of the execution time was spent in the sub_function function, which was called a total of 10 times
-primitively, and 55 times recursively. By the time the sequence of code had reached the third_function(), it had already
-spent 6.825 seconds through test_function() and its subfunction, sub_function().
+A sample ouput of the cProfile indicates that it took 9.681 seconds to go through main(). 0.849 seconds were spent in main
+itself. The reasoning for this can be attributed to processing a large enough return value, such as the one from third_function(), which took 8.831 seconds.
+Or, well, specifically in the list comprehension of the third_function.
+This is moreso because the list comprehension is creating a list of 100,000,000 elements, each containing a square of the index. In comparison, test_function takes 0.000 seconds.
+This implies that the the time taken is less than 1e-3 seconds, and as such could be considered negligible. It being recursive helps with
+its efficiency. 
 """
