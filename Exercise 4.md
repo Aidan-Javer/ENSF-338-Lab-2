@@ -10,9 +10,13 @@
 
 5.  A few weeks in the term, we can recognize that both signs lead to the same loop; and that there are only 20 rooms, ordered in a linear fashion [EY100, EY102..., EY136, EY138]. Thus, we can instead perform an interval search (specifically a binary one). By starting at a room in the middle of EY100-138, we can make a comparison by checking whether or not the room we chose is greater than, less than, or matches EY128. If it isn't the latter, we're then only concerned with one half of the rooms left. Following the logic of a binary search, we can reach EY128 in 5 steps.
 >[100, 102, 104, 106, 108, 110, 112, 114, 116, **118, 120**, 122, 124, 126, 128, 130, 132, 134, 136, 138]
+
 >[120, 122, 124, 126, **128, 130**, 132, 134, 136, 138]
+
 >[120, 122, **124**, 126, 128]
+
 >[**126, 128**]
+
 >[**128**]
 
     While it is technically slightly more efficient than a sequential search starting at the right of the sign, in reality we'd probably memorize where the room is located, with no need for algorithmic assistance.
