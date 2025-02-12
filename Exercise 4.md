@@ -14,4 +14,5 @@
 >[120, 122, **124**, 126, 128]
 >[**126, 128**]
 >[**128**]
+
     While it is technically slightly more efficient than a sequential search starting at the right of the sign, in reality we'd probably memorize where the room is located, with no need for algorithmic assistance.
